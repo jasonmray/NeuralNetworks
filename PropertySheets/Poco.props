@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ImportGroup Label="PropertySheets" />
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <IncludePath>..\3rdParty\poco-1.6.1\Foundation\include;..\3rdParty\poco-1.6.1\JSON\include;$(IncludePath)</IncludePath>
+    <LibraryPath>..\3rdParty\poco-1.6.1\lib64;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies Condition="'$(Configuration)'=='Debug'">PocoFoundationd.lib;PocoJSONd.lib;%(AdditionalDependencies)</AdditionalDependencies>
+	  <AdditionalDependencies Condition="'$(Configuration)'!='Debug'">PocoFoundation.lib;PocoJSON.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup />
+</Project>

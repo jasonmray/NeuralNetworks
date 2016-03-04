@@ -1,0 +1,86 @@
+https://www.codecogs.com/latex/eqneditor.php
+
+
+
+
+z=\sum w_{j}x_{j}+b
+\\
+\\
+sigmoid\ function:
+\\
+\sigma(z)=\frac{1}{(1+e^{-z})}
+\\
+\\
+\sigma'(z)=\frac{e^{z}}{(e^{z} + 1)^{2}}
+
+
+
+
+Quadratic\ Cost:
+\\
+\\
+C(w,b)=\frac{1}{2n}\sum \left \| y(x)-a \right \|^{2}
+\\
+\\
+x: input\ vector
+\\
+y(x) : label/expected
+\\
+a: network\ output
+\\
+n:number\ of\ training\ outputs
+
+
+
+
+For\ function\ C(v):
+\\
+\\
+\Delta C \approx \nabla C \cdot \Delta v
+\\
+where\ \nabla\ is\ gradient.
+\\
+\\
+Choose\ \Delta v = -\eta \nabla C,
+\\
+then\ v \rightarrow v' = v - \eta \nabla C
+\\
+\\
+\nabla C = \left \langle \frac{\partial C}{\partial v_{1}}\cdots \frac{\partial C}{\partial v_{m}} \right \rangle
+
+
+
+w_{k} \rightarrow w'_{k} = w_{k}-\eta \frac{\partial C}{\partial w_{k}}
+
+
+
+b_{l} \rightarrow b'_{l} = b_{l} - \eta \frac{\partial C}{\partial b_{l}}
+
+
+
+Chain\ rule:
+\\
+F(x)=f(g(x))
+\\
+F'(x)=f'(g(x))g'(x)
+
+
+
+
+
+
+
+Backprop\ equations
+\\
+\\
+\delta^L = \nabla C \odot \sigma'(z^L)\ \ \ \ L\ is\ final\ layer
+\\
+\\
+\delta^l = ((w^{l+1})^T \delta^{l+1} )\odot \sigma'(z^l)
+\\
+\\
+\frac{\partial C}{\partial b^l_j} = \delta^l_j
+\\
+\\
+\\
+\frac{\partial C}{\partial w^l_{jk}} = a^{l-1}_k \delta^l_j
